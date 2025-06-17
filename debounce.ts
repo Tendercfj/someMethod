@@ -5,7 +5,7 @@
  * @returns 
  */
 const debounce = (func: Function, wait = 500) => {
-  let timer = 0
+  let timer: any = null
   return function (...args) {
     if(timer) clearTimeout(timer)
     timer = setTimeout(() => {
