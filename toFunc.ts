@@ -48,7 +48,7 @@
  * @param {promise<T>} promise - 要处理的promise 
  * @returns {promise<[Error | null, T | undefined]>} 返回一个promise，数组中第一个元素是错误信息，第二个元素是数据
  */
-export function to<T>(promise: Promise<T>): Promise<[Error | null, T | undefined]>{
+export const to = <T>(promise: Promise<T>): Promise<[Error | null, T | undefined]> => {
   return promise
     .then<[null,T]>((data:T) => [null, data])
     .catch<[Error, undefined]>((error:Error) => [error, undefined]);
