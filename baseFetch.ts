@@ -14,7 +14,7 @@ export const baseFetch = async (path:string, params:object) => {
   return fetch(`${getBaseUrl()}${path}`,params)
 }
 
-export const jsonFetch = async (path:string, params:any = {}, retry = 0) => {
+export const jsonFetch = async (path:string, params:any = {}, retry = 0): Promise<any> => {
   const headers = {
     ...(params?.headers || {}),
     Authorization: localStorage.getItem('token'),
