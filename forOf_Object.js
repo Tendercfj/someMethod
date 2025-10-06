@@ -33,3 +33,21 @@ console.log(name, age, city);
 
 const keys = Object.keys(obj);
 console.log(keys);
+
+// 也可以通过Generator函数实现迭代器方法
+function* objectEntries(obj) {
+  let propsKeys = Reflect.ownKeys(obj);
+  for (let propKey of propsKeys) {
+    yield [propKey, obj[propKey]];
+  }
+}
+
+let testObj = {
+  name: "John",
+  age: 30,
+  city: "New York",
+};
+
+for (let [key, value] of objectEntries(testObj)) {
+  console.log(`${key}: ${value}`);
+}

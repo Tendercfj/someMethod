@@ -12,7 +12,7 @@ export interface UseLoadingOptions {
  * 
  * @param options 
  * @returns 
- * @description 封装一个useLoading方法，用于处理异步请求的loading状态，并提供错误处理机制，使得异步请求的错误信息可以被全局统一处理，搭配骨架屏可以提升用户体验
+ * @description 封装一个useLoading方法，用于处理异步请求的loading状态，并提供错误处理机制，使得异 步请求的错误信息可以被全局统一处理，搭配骨架屏可以提升用户体验
  */
 export function useLoading(options: UseLoadingOptions = {}) {
   const loading = ref(true);
