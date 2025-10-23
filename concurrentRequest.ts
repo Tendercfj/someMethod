@@ -5,7 +5,7 @@
  * @returns {Promise<any[]>} 按 tasks 顺序返回结果
  */
 const concurrentRequest = (tasks, maxConcurrent) => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const len = tasks.length
     if(len == 0) return resolve([])
 
